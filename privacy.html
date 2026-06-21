@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Politique de confidentialité — Application de suivi sportif</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background: #f4f6fb;
+      color: #1a1a2e;
+      padding: 32px 16px 64px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .page-header {
+      background: linear-gradient(135deg, #1a56a0 0%, #0e3a72 100%);
+      border-radius: 16px;
+      padding: 40px 40px 36px;
+      color: white;
+      margin-bottom: 32px;
+    }
+
+    .page-header h1 {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .page-header .subtitle {
+      font-size: 0.97rem;
+      opacity: 0.82;
+      margin-bottom: 20px;
+      line-height: 1.5;
+    }
+
+    .meta-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    .meta-item {
+      background: rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 10px 14px;
+    }
+
+    .meta-item .label {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      opacity: 0.7;
+      margin-bottom: 3px;
+    }
+
+    .meta-item .value {
+      font-size: 0.88rem;
+      font-weight: 500;
+    }
+
+    /* TOC */
+    .toc {
+      background: white;
+      border-radius: 12px;
+      padding: 24px 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .toc h2 {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: #888;
+      margin-bottom: 14px;
+    }
+
+    .toc ol {
+      margin-left: 20px;
+    }
+
+    .toc li {
+      margin-bottom: 6px;
+    }
+
+    .toc a {
+      color: #1a56a0;
+      text-decoration: none;
+      font-size: 0.92rem;
+    }
+
+    .toc a:hover { text-decoration: underline; }
+
+    /* Cards */
+    .card {
+      background: white;
+      border-radius: 12px;
+      padding: 32px 36px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .card h2 .num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      background: #e8f0fa;
+      color: #1a56a0;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #1a56a0;
+      margin: 20px 0 8px;
+    }
+
+    .card p {
+      font-size: 0.93rem;
+      line-height: 1.7;
+      color: #333;
+      margin-bottom: 12px;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    ul.list {
+      margin: 8px 0 12px 20px;
+      list-style: none;
+    }
+
+    ul.list li {
+      font-size: 0.93rem;
+      line-height: 1.6;
+      color: #333;
+      padding-left: 4px;
+      margin-bottom: 5px;
+      position: relative;
+    }
+
+    ul.list li::before {
+      content: "–";
+      position: absolute;
+      left: -16px;
+      color: #1a56a0;
+    }
+
+    /* Warning box */
+    .info-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 0 8px 8px 0;
+      padding: 14px 16px;
+      margin: 16px 0;
+      font-size: 0.88rem;
+      color: #78540a;
+      line-height: 1.6;
+    }
+
+    /* Table */
+    .table-wrap {
+      overflow-x: auto;
+      margin: 16px 0;
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+    }
+
+    thead th {
+      background: #1a56a0;
+      color: white;
+      text-align: left;
+      padding: 11px 14px;
+      font-weight: 600;
+      white-space: nowrap;
+    }
+
+    thead th:first-child { border-radius: 10px 0 0 0; }
+    thead th:last-child  { border-radius: 0 10px 0 0; }
+
+    tbody tr:nth-child(even) { background: #f8faff; }
+    tbody tr:hover { background: #eef3fb; }
+
+    tbody td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #f0f0f0;
+      vertical-align: top;
+      line-height: 1.5;
+    }
+
+    tbody td:first-child { font-weight: 600; color: #1a1a2e; white-space: nowrap; }
+
+    tbody tr:last-child td { border-bottom: none; }
+
+    /* Rights */
+    .rights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    .right-item {
+      background: #f5f8fe;
+      border-radius: 10px;
+      padding: 14px 16px;
+    }
+
+    .right-item .right-title {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #1a56a0;
+      margin-bottom: 4px;
+    }
+
+    .right-item .right-desc {
+      font-size: 0.82rem;
+      color: #555;
+      line-height: 1.5;
+    }
+
+    /* Contact */
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #1a56a0;
+      color: white;
+      border-radius: 8px;
+      padding: 10px 18px;
+      text-decoration: none;
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-top: 12px;
+      transition: background 0.2s;
+    }
+
+    .contact-link:hover { background: #0e3a72; }
+
+    /* Delete account link */
+    .delete-banner {
+      background: #fff0f0;
+      border: 1px solid #fca5a5;
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+    }
+
+    .delete-banner p {
+      font-size: 0.9rem;
+      color: #7f1d1d;
+      margin: 0;
+    }
+
+    .delete-banner a {
+      background: #c0392b;
+      color: white;
+      padding: 8px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 0.88rem;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: background 0.2s;
+    }
+
+    .delete-banner a:hover { background: #a93226; }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      font-size: 0.78rem;
+      color: #aaa;
+      margin-top: 32px;
+    }
+
+    @media (max-width: 560px) {
+      .card { padding: 24px 20px; }
+      .page-header { padding: 28px 24px; }
+      .meta-grid { grid-template-columns: 1fr; }
+      .rights-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1>Politique de confidentialité</h1>
+    <p class="subtitle">Application mobile de suivi sportif et de coaching</p>
+    <div class="meta-grid">
+      <div class="meta-item">
+        <div class="label">Responsable</div>
+        <div class="value">Thomas Vene</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Contact</div>
+        <div class="value">pubispam@gmail.com</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Droit applicable</div>
+        <div class="value">RGPD (Union Européenne)</div>
+      </div>
+      <div class="meta-item">
+        <div class="label">Dernière mise à jour</div>
+        <div class="value">Juin 2025</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOC -->
+  <div class="toc">
+    <h2>Sommaire</h2>
+    <ol>
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#donnees">Données collectées</a></li>
+      <li><a href="#finalites">Finalités du traitement</a></li>
+      <li><a href="#acces">Qui a accès à vos données ?</a></li>
+      <li><a href="#conservation">Durée de conservation</a></li>
+      <li><a href="#securite">Sécurité des données</a></li>
+      <li><a href="#droits">Vos droits</a></li>
+      <li><a href="#mineurs">Mineurs</a></li>
+      <li><a href="#modifications">Modifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ol>
+  </div>
+
+  <!-- 1. Introduction -->
+  <div class="card" id="intro">
+    <h2><span class="num">1</span> Introduction</h2>
+    <p>La présente politique de confidentialité décrit la manière dont l'application collecte, utilise, stocke et protège vos données personnelles.</p>
+    <p>Nous attachons une importance particulière à la protection de votre vie privée. Les données que vous confiez à l'application sont utilisées exclusivement pour faire fonctionner les services que vous sollicitez — elles ne font l'objet d'aucun traitement automatisé, d'aucune analyse à des fins commerciales, et ne sont jamais vendues à des tiers.</p>
+  </div>
+
+  <!-- 2. Données collectées -->
+  <div class="card" id="donnees">
+    <h2><span class="num">2</span> Données collectées</h2>
+    <p>L'application collecte uniquement les données nécessaires à son fonctionnement.</p>
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Catégorie</th>
+            <th>Données collectées</th>
+            <th>Finalité</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Compte</td>
+            <td>Identifiant, prénom, nom, e-mail, photo de profil, date de naissance (optionnelle)</td>
+            <td>Création et gestion du compte</td>
+          </tr>
+          <tr>
+            <td>Authentification</td>
+            <td>Mot de passe (hashé BCrypt, jamais en clair), code de vérification e-mail</td>
+            <td>Sécurité de l'accès</td>
+          </tr>
+          <tr>
+            <td>Entraînements</td>
+            <td>Sessions, exercices, séries, répétitions, charges, notes de séance</td>
+            <td>Suivi de l'activité physique</td>
+          </tr>
+          <tr>
+            <td>Photos de séance</td>
+            <td>Photos prises ou importées lors d'une séance</td>
+            <td>Historique visuel</td>
+          </tr>
+          <tr>
+            <td>Photos corporelles</td>
+            <td>Photos de suivi de la composition corporelle</td>
+            <td>Suivi de la progression</td>
+          </tr>
+          <tr>
+            <td>Nutrition</td>
+            <td>Plans de repas, aliments, quantités, apports nutritionnels</td>
+            <td>Suivi nutritionnel</td>
+          </tr>
+          <tr>
+            <td>Messagerie</td>
+            <td>Messages échangés avec votre coach</td>
+            <td>Communication coach / athlète</td>
+          </tr>
+          <tr>
+            <td>Formulaires</td>
+            <td>Réponses aux formulaires de suivi envoyés par le coach</td>
+            <td>Suivi personnalisé</td>
+          </tr>
+          <tr>
+            <td>Rendez-vous</td>
+            <td>Dates, horaires et lieux de rendez-vous avec le coach</td>
+            <td>Gestion des séances</td>
+          </tr>
+          <tr>
+            <td>Notifications push</td>
+            <td>Identifiant technique de l'appareil (token), plateforme</td>
+            <td>Envoi de notifications</td>
+          </tr>
+          <tr>
+            <td>Signalement de bugs</td>
+            <td>Description textuelle et capture d'écran (optionnelle)</td>
+            <td>Amélioration de l'app</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Aucune donnée de localisation GPS, aucune donnée de santé au sens médical (fréquence cardiaque, biométrie) et aucun identifiant publicitaire ne sont collectés.</p>
+  </div>
+
+  <!-- 3. Finalités -->
+  <div class="card" id="finalites">
+    <h2><span class="num">3</span> Finalités du traitement</h2>
+    <p>Vos données sont traitées pour les seules finalités suivantes :</p>
+    <ul class="list">
+      <li>Fournir les fonctionnalités de l'application (suivi sportif, nutrition, messagerie, rendez-vous)</li>
+      <li>Permettre à votre coach de vous accompagner dans le cadre de la relation de coaching</li>
+      <li>Sécuriser l'accès à votre compte et prévenir les usages non autorisés</li>
+      <li>Vous envoyer des notifications liées à l'activité de l'application</li>
+      <li>Corriger les anomalies techniques signalées</li>
+    </ul>
+    <div class="info-box">
+      Aucun traitement automatisé de vos données n'est réalisé à des fins de profilage, de ciblage publicitaire ou d'analyse comportementale.
+    </div>
+  </div>
+
+  <!-- 4. Accès -->
+  <div class="card" id="acces">
+    <h2><span class="num">4</span> Qui a accès à vos données ?</h2>
+
+    <h3>Vous-même</h3>
+    <p>Vous avez accès à l'intégralité de vos données via votre espace personnel.</p>
+
+    <h3>Votre coach (durant la relation de coaching)</h3>
+    <p>Lorsque vous êtes mis en relation avec un coach, celui-ci accède aux données partagées dans ce cadre : plans d'entraînement, nutrition, formulaires, messages, rendez-vous et notes de suivi.</p>
+    <p><strong>Vous pouvez mettre fin à la relation de coaching à tout moment depuis l'application.</strong> La rupture est immédiate : le coach perd instantanément l'accès à vos données.</p>
+
+    <h3>L'administrateur de l'application</h3>
+    <p>L'administrateur a accès aux données de compte (identifiant, e-mail, abonnement) à des fins de gestion technique et de support uniquement. Il n'a pas accès au contenu de vos entraînements, messages ou formulaires.</p>
+
+    <h3>Tiers</h3>
+    <p>Aucune donnée personnelle n'est transmise, vendue ou partagée avec des tiers à des fins commerciales ou publicitaires. L'application n'intègre aucun outil d'analyse tiers.</p>
+  </div>
+
+  <!-- 5. Conservation -->
+  <div class="card" id="conservation">
+    <h2><span class="num">5</span> Durée de conservation</h2>
+    <p>Vos données sont conservées aussi longtemps que votre compte est actif. En cas de suppression de votre compte, l'ensemble de vos données est effacé de nos serveurs dans un délai de 7 jours ouvrés.</p>
+  </div>
+
+  <!-- 6. Sécurité -->
+  <div class="card" id="securite">
+    <h2><span class="num">6</span> Sécurité des données</h2>
+    <p>Nous mettons en œuvre les mesures techniques suivantes :</p>
+    <ul class="list">
+      <li>Les mots de passe sont hachés avec BCrypt — jamais stockés en clair</li>
+      <li>Les communications entre l'application et le serveur sont chiffrées via HTTPS</li>
+      <li>L'accès à l'API est contrôlé par authentification JWT</li>
+      <li>Les données sont hébergées sur un serveur sécurisé</li>
+    </ul>
+  </div>
+
+  <!-- 7. Droits -->
+  <div class="card" id="droits">
+    <h2><span class="num">7</span> Vos droits</h2>
+    <p>Conformément au RGPD, vous disposez des droits suivants :</p>
+    <div class="rights-grid">
+      <div class="right-item">
+        <div class="right-title">Droit d'accès</div>
+        <div class="right-desc">Obtenir une copie de vos données personnelles</div>
+      </div>
+      <div class="right-item">
+        <div class="right-title">Droit de rectification</div>
+        <div class="right-desc">Corriger des données inexactes ou incomplètes</div>
+      </div>
+      <div class="right-item">
+        <div class="right-title">Droit à l'effacement</div>
+        <div class="right-desc">Demander la suppression de votre compte et de vos données</div>
+      </div>
+      <div class="right-item">
+        <div class="right-title">Droit à la portabilité</div>
+        <div class="right-desc">Recevoir vos données dans un format structuré et lisible</div>
+      </div>
+      <div class="right-item">
+        <div class="right-title">Droit d'opposition</div>
+        <div class="right-desc">Vous opposer à un traitement de vos données</div>
+      </div>
+      <div class="right-item">
+        <div class="right-title">Droit de réclamation</div>
+        <div class="right-desc">Saisir la CNIL si vous estimez que vos droits ne sont pas respectés</div>
+      </div>
+    </div>
+    <p style="margin-top:16px">Pour exercer ces droits : <a href="mailto:pubispam@gmail.com" style="color:#1a56a0">pubispam@gmail.com</a></p>
+
+    <div class="delete-banner">
+      <p>Vous souhaitez supprimer votre compte et toutes vos données ?</p>
+      <a href="./delete-account">Faire une demande de suppression</a>
+    </div>
+  </div>
+
+  <!-- 8. Mineurs -->
+  <div class="card" id="mineurs">
+    <h2><span class="num">8</span> Mineurs</h2>
+    <p>L'application n'est pas destinée aux personnes âgées de moins de 16 ans. Nous ne collectons pas sciemment de données personnelles concernant des mineurs.</p>
+  </div>
+
+  <!-- 9. Modifications -->
+  <div class="card" id="modifications">
+    <h2><span class="num">9</span> Modifications</h2>
+    <p>Nous nous réservons le droit de modifier cette politique à tout moment. En cas de modification substantielle, vous en serez informé via l'application. La date de dernière mise à jour est indiquée en haut de ce document.</p>
+  </div>
+
+  <!-- 10. Contact -->
+  <div class="card" id="contact">
+    <h2><span class="num">10</span> Contact</h2>
+    <p>Pour toute question relative à cette politique ou à l'utilisation de vos données personnelles :</p>
+    <a href="mailto:pubispam@gmail.com" class="contact-link">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><polyline points="2,4 12,13 22,4"/></svg>
+      pubispam@gmail.com
+    </a>
+    <p style="margin-top:14px; font-size:0.88rem; color:#666">Vous pouvez également introduire une réclamation auprès de la <a href="https://www.cnil.fr" target="_blank" style="color:#1a56a0">CNIL (www.cnil.fr)</a>.</p>
+  </div>
+
+  <footer>Application de suivi sportif et de coaching &nbsp;·&nbsp; Thomas Vene &nbsp;·&nbsp; <a href="mailto:pubispam@gmail.com" style="color:#aaa">pubispam@gmail.com</a></footer>
+
+</div>
+</body>
+</html>
